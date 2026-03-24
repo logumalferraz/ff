@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>portifolio\pessoal</title>
+</head>
+
+<body>
+    <div class="particulas"></div>
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#Inicio" class="menu-link">Inicio</a>
+            </li>
+            <li>
+                <a href="#Sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="Projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="Contactos" class="menu-link">Contactos</a>
+            </li>
+        </ul>
+    </nav>
+    <main id="Inicio" class="cabecalho">
+
+        <img src=".img/bob.jpg" alt="foto de Logumal Rodrigues Ferraz" class="foto-perfil">
+        <h1>Logumal Rodrigues Ferraz</h1>
+        <p class="substitulo">Desenvolvedor Front-End</p>
+
+    </main>
+    <section id="Sobre" class="Sobre">
+        <h2 class="Sobre-titulo">Sobre Mim</h2>
+        <div class="Sobre-caixa">
+            <p class="Sobre-paragrafo">
+                Desenvolvedor web apaixonado por criar experiências digitais intuitivas e funcionais. venho me dedicando ao desenvolvimento front-end, trabalhando com HTML, CSS e JavaScript, além de explorar frameworks e bibliotecas modernas como React, Vue.js e ferramentas
+                de design responsivo. Também possuo conhecimentos em TypeScript, SASS/SCSS, Git e integração com APIs, sempre buscando otimizar performance e experiência do usuário. Meu objetivo como programador é construir soluções web modernas e escaláveis,
+                capazes de transformar ideias em produtos funcionais, elegantes e acessíveis. Tenho foco em aprimorar constantemente minhas habilidades, aprender novas tecnologias e contribuir para projetos que façam a diferença na vida das pessoas.
+            </p>
+        </div>
+    </section>
+    <section id="Projetos" class="Projetos">
+        <h2 class="Projetos-titulos">Meus Projetos</h2>
+        <div class="Projetos-caixa">
+
+            <div class="Projetos-cards">
+                <img src=".img/face.jpeg" alt="Projeto1" class="Projetos-imagem">
+                <div class="caixa-texto-projecto">
+                    <h3 class="info-projetos">Loja de Vendas</h3>
+                    <p class="paragrafo-projeto">Loja virtual para venda de telemoveis e Acessorios</p>
+                </div>
+            </div>
+
+            <div class="Projetos-cards">
+                <img src=".img/link.jpeg" alt="Projeto1" class="Projetos-imagem">
+                <div class="caixa-texto-projecto">
+                    <h3 class="info-projetos">Linkedlin</h3>
+                    <p class="paragrafo-projeto">esse nao é um projecto, mas im um espelho daquilo que sou!</p>
+                </div>
+            </div>
+
+            <div class="Projetos-cards">
+                <img src=".img/bob.jpg" alt="Projeto1" class="Projetos-imagem">
+
+                <div class="caixa-texto-projecto">
+                    <h3 class="info-projetos">spotify</h3>
+                    <p class="paragrafo-projeto">Loja virtual para venda de telemoveis e Acessorios</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="Contactos" class="Contactos">
+        <h2 class="Contactos-titulo">Contacte-me</h2>
+
+        <form class="formulario-Contactos" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-forma">
+                <input placeholder="Nome" class="campo-form" id="Nome">
+            </div>
+
+
+            <div class="grupo-forma">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" id="Mensagem"></textarea>
+            </div>
+            <button type="submit" class="tecla-forma">Enviar</button>
+
+        </form>
+    </section>
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault
+
+
+
+            const Nome = document.getElementById('Nome').value;
+            const Mensagem = document.getElementById('Mensagem');
+            const telefone = '258848132823'
+            const texto = `Ola! me chamo ${Nome}, ${Mensagem}`
+            const MsgFormatada = encodeURIComponent(texto)
+            const url = `https://api.whatsapp.com/qr/YGY4R7LPJLXLK1?autoload=1&app_absent=0/${telefone}/?t=${MsgFormatada}`
+            console.log(url)
+            window.open(url, '_blank')
+        }
+    </script>
+</body>
+
+</html>
